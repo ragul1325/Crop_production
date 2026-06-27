@@ -1,0 +1,27 @@
+DATA CLEANING SUMMARY
+============================================================
+Raw rows: 103
+Duplicate rows removed: 0
+Rows with missing Value dropped: 2
+  Dropped items: ['Pomelos and grapefruits', 'Poppy seed']
+  Reason: Flag 'M' = data cannot exist for these items in India
+Zero/negative production values found: 0
+Final cleaned rows: 101
+
+Scope constraint:
+  Source file contains only Element='Production', Year=2021, Area='India'.
+  No Area harvested or Yield data, and no multi-year data were supplied.
+  This means: (a) no regression model can be trained as the original
+  brief specifies, since Production cannot be predicted from Area
+  harvested/Yield/Year without those columns; (b) no temporal trend
+  analysis is possible. This pipeline instead delivers a thorough
+  cross-sectional EDA of India's 2021 production landscape.
+
+Derived columns added: Production_Million_Tonnes, Item_Category,
+  Is_Estimated_Or_Imputed, Production_Rank
+
+Item category breakdown:
+  Primary Crop: 86
+  Processed (Oils): 10
+  Processed (Other): 4
+  Fibre / Cotton Products: 1
